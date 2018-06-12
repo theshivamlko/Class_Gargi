@@ -7,6 +7,7 @@ class ABC{
         // String arg[]
         // String...arg
 
+        
         int a=0;
         boolean b=true;
         String str="Helllo";   //  " ",  ' '
