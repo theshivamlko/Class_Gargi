@@ -41,7 +41,6 @@ class If{
         System.out.println("Even");
         else
             System.out.println("Odd");   
-            
-            
+           
     }
 }
