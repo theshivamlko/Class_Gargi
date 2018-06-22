@@ -1,3 +1,5 @@
+ 
+
 class MyClasses{
 
 
@@ -15,10 +17,12 @@ class MyClasses{
 
         Cars cars2=new Cars();
 
+        Cars cars3=new Cars("RED");
+
 
         System.out.println(cars1.maxSpeed+" "+cars2.maxSpeed);
         
-        System.out.println(cars1.color+" "+cars2.color);
+        System.out.println(cars1.color+" "+cars2.color+" "+cars3.color);
 
         cars1.color="BLACK";
         System.out.println(cars1.color+" "+cars2.color);
@@ -36,7 +40,9 @@ class MyClasses{
         System.out.println(cars1.companyName+" "+cars2.companyName);
         Cars.companyName="BMW";
         System.out.println(cars1.companyName+" "+cars2.companyName);
-        
+
+
+         
     }
 
 }

@@ -14,6 +14,7 @@ class Loops {
 
         int i = 1;
         for (; i <= 20; i++) {
+
             System.out.println(i);
         }
         System.out.println(i + " ====");
@@ -25,6 +26,7 @@ class Loops {
         System.out.println(i2 + " ====");
 
         for (i = 1; i <= 20; i++) {
+         
             if (i % 2 == 0) {
                 System.out.println(i + " EVEn");
             } else
@@ -32,24 +34,21 @@ class Loops {
 
         }
 
-
         // prime
-        int z=19;
-        int count=0;
+        int z = 19;
+        int count = 0;
 
-        for(i=2;i<=z;i++){
-           
-            if(z%i==0){
+        for (i = 2; i <= z; i++) {
+
+            if (z % i == 0) {
                 count++;
             }
         }
 
-        if(count==1){
+        if (count == 1) {
             System.out.print("Prime");
-        }
-        else
-        System.out.print("Not prime");
-        
+        } else
+            System.out.print("Not prime");
 
     }
 }
