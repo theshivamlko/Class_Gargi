@@ -35,5 +35,15 @@
         android:layout_gravity="center_horizontal"
         android:padding="20dp"/>
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="Show Toast"
+        android:background="#a35ec8"
+        android:textColor="#FFFFFF"
+        android:layout_gravity="center_horizontal"
+        android:padding="20dp"/>
+
 
 </LinearLayout>
