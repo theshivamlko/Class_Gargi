@@ -19,13 +19,6 @@
         android:hint="enter password"
         android:inputType="textPassword" />
 
-    <EditText
-        android:id="@+id/mobileno"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:hint="enter mobileno"
-        android:inputType="number"
-        android:maxLength="10" />
     <Button
         android:layout_width="150dp"
         android:layout_height="60dp"
