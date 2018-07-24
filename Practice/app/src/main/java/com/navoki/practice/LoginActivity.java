@@ -1,5 +1,6 @@
 package com.navoki.practice;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -30,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     Button register;
     String stremail;
     String strpass;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,6 +46,10 @@ public class LoginActivity extends AppCompatActivity {
 
         email.setHint("enter username");
         register.setText("signup");
+
+        progressDialog=new ProgressDialog(LoginActivity.this);
+        progressDialog.setMessage("Loading...");
+        progressDialog.setCancelable(false);
 
         View.OnClickListener click = new View.OnClickListener() {
             @Override
@@ -84,7 +90,14 @@ public class LoginActivity extends AppCompatActivity {
 // naman@gmail.com
     // naman
     class LoginTask extends AsyncTask<String,String,String>{
-        @Override
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+        progressDialog.show();
+    }
+
+    @Override
         protected String doInBackground(String... strings) {
 
             try {
@@ -121,12 +134,18 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
+            progressDialog.dismiss();
             if(s!=null){
                 try {
                     JSONObject jsonObject=new JSONObject(s);
                     boolean status=jsonObject.getBoolean("status");
                     if(status){
+
+                        JSONObject obj=jsonObject.getJSONObject("data");
+                        String name=obj.getString("name");
+
                         Intent intent=new Intent(LoginActivity.this,HomeActivity.class);
+                        intent.putExtra("name",name);
                         startActivity(intent);
                         finish();
                     }
