@@ -11,7 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextClock;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -37,7 +37,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.signupactivity);
+        setContentView(R.layout.login);
+
+        TextView newaccount=findViewById(R.id.newaccount);
 
         email = findViewById(R.id.email);
         register = findViewById(R.id.login);
@@ -61,6 +63,15 @@ public class LoginActivity extends AppCompatActivity {
         };
 
         register.setOnClickListener(click);
+
+        newaccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(LoginActivity.this,SignUpActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
 
